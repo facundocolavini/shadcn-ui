@@ -1,0 +1,18 @@
+---
+
+import DashboardLayout from "@/layouts/DashboardLayout.astro";
+import DataTablePage from "@/components/data-table/data-table-page";
+import { payments } from "@/data/payments.data";
+
+async function fetchData () {
+  return payments;
+}
+
+const data = await fetchData();
+
+---
+
+
+<DashboardLayout>
+  <DataTablePage client:idle/>
+  </DashboardLayout>

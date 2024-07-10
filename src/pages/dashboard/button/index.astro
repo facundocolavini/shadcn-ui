@@ -1,0 +1,39 @@
+---
+import ButtonPage from "@/components/button-page";
+import { Button } from "@/components/ui/button";
+import DashboardLayout from "@/layouts/DashboardLayout.astro";
+import { ChevronRight, Loader2, Mail } from "lucide-react";
+---
+
+<DashboardLayout>
+  <div class="grid grid-cols-5 gap-2">
+    <!-- Variantes -->
+    <Button>Default</Button>
+    <Button variant="destructive">destructive</Button>
+    <Button variant="ghost">ghost</Button>
+    <Button variant="secondary">secondary</Button>
+    <Button variant="outline">outline</Button>
+    <Button disabled>disabled</Button>
+    <Button variant="link">Link</Button>
+    <Button variant="outline" size="icon">
+      <ChevronRight className="h-4 w-4" />
+    </Button>
+    <Button>
+      <Mail className="mr-2 h-4 w-4" /> Login with Email
+    </Button>
+    <Button disabled>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      Please wait
+    </Button>
+    <Button asChild>
+      <Button>
+        <a href="/dashboard/alert">Go to Alert</a>
+      </Button>
+    </Button>
+    <!-- Variantes via props -->
+    <Button capitalize={false}>capitalize false</Button>
+    <!-- Eventos -->
+    <ButtonPage client:idle />
+    <Button variant="success">Success</Button>
+  </div>
+</DashboardLayout>

@@ -1,0 +1,22 @@
+---
+
+import DashboardLayout from "@/layouts/DashboardLayout.astro";
+
+
+// Redirect to dashboard if user is dont have access
+const redirectToDashboard = true 
+
+if (redirectToDashboard) {
+  return Astro.redirect('/dashboard')
+}
+
+
+
+
+
+---
+
+
+<DashboardLayout>
+    <h1>Home</h1>
+  </DashboardLayout>
